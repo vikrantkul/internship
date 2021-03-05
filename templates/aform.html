@@ -44,11 +44,11 @@ table, th, td {
   <input type="text"  name="No_of_shifts_per_day"><br>
 <label>Exchange_rate:<br>1$= </br></label>
   <input type="text"  name="Exchange_rate" id="v6" onchange="calc3()" value="0"><br>
-    <input type="submit" value="Submit">
+    <input type="submit" value="Submit" name="btnform1">
 </form>
         <h2 >Absenteeis and Defective</h2>
 
-  <form method="post"> {% csrf_token %}
+  <form method="post" action="../Absenteeis_and_Defective/"> {% csrf_token %}
 
 <label>Sewing:</label>
   <input type="text"  name="Sewing"  ><br>
@@ -71,8 +71,7 @@ table, th, td {
   <input type="text"  name="Year{{i}}" ><br>
       {% endfor %}
 
-
-    <input type="submit" value="Submit">
+    <input type="submit" value="Submit" name="btnform2">
 </form>
                 <h2 >Cost Assumptions</h2>
 

@@ -19,8 +19,8 @@ from assumptions import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('Absenteeis_and_Defective/', views.create_Absenteeis_and_Defective, name='create_Absenteeis_and_Defective'),
     path('assumption/',views.create_assumption,name='assumption'),
-    path('assumption/',views.create_Absenteeis_and_Defective,name='create_Absenteeis_and_Defective'),
     path('assumption/', views.create_Cost_Assumptions, name='Cost_Assumptions'),
 
 ]

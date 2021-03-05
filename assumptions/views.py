@@ -5,7 +5,7 @@ from .models import Assumptions,Absenteeis_and_Defective,Cost_Assumptions,Salary
 
 
 def create_assumption(request):
-    if request.method=='POST':
+    if request.method=='POST' and 'btnform1' in request.POST:
         No_of_years=request.POST.get('No_of_years')
         No_of_working_hrs_per_day=request.POST.get('No_of_working_hrs_per_day')
         Working_minutes_per_day = request.POST.get('Working_minutes_per_day')
@@ -37,45 +37,26 @@ def create_assumption(request):
     else:
         return render(request,'aform.html')
 
-    # if request.method=='POST':
-    #     Sewing=request.POST.get('Sewing')
-    #     Cutting = request.POST.get('Cutting')
-    #     Finishing = request.POST.get('Finishing')
-    #     Cutting_Output_as_percentage_of_Sewing_Output = request.POST.get('Cutting_Output_as_percentage_of_Sewing_Output')
-    #     Finishing_Output_as_percentage_of_Sewing_Output = request.POST.get('Finishing_Output_as_percentage_of_Sewing_Output')
-    #     Extra_Sewing_Machines_Required = request.POST.get('Extra_Sewing_Machines_Required')
-    #     Cutting_Loss=request.POST.get('Cutting_Loss')
-    #     Year1=request.POST.get('Year1')
-    #     Year2=request.POST.get('Year2')
-    #     Year3=request.POST.get('Year3')
-    #
-    #     b=Absenteeis_and_Defective(Sewing=Sewing,Cutting=Cutting,
-    #                   Finishing=Finishing,Cutting_Output_as_percentage_of_Sewing_Output=Cutting_Output_as_percentage_of_Sewing_Output,
-    #                   Finishing_Output_as_percentage_of_Sewing_Output=Finishing_Output_as_percentage_of_Sewing_Output,Extra_Sewing_Machines_Required=Extra_Sewing_Machines_Required,
-    #                   Cutting_Loss=Cutting_Loss,Year1=Year1,Year2=Year2,Year3=Year3)
-    #     b.save()
-    #
-    #     return render(request,'aform.html')
-    # else:
-    #     return render(request,'aform.html')
 
 def create_Absenteeis_and_Defective(request):
-    if request.method=='POST':
-        Sewing=request.POST.get('Sewing')
-        Cutting = request.POST.get('Cutting')
-        Finishing = request.POST.get('Finishing')
-        Cutting_Output_as_percentage_of_Sewing_Output = request.POST.get('Cutting_Output_as_percentage_of_Sewing_Output')
-        Finishing_Output_as_percentage_of_Sewing_Output = request.POST.get('Finishing_Output_as_percentage_of_Sewing_Output')
-        Extra_Sewing_Machines_Required = request.POST.get('Extra_Sewing_Machines_Required')
-        Cutting_Loss=request.POST.get('Cutting_Loss')
-        Year1=request.POST.get('Year1')
-        Year2=request.POST.get('Year2')
-        Year3=request.POST.get('Year3')
-
-        a=Absenteeis_and_Defective(Sewing=Sewing,Cutting=Cutting,
-                      Finishing=Finishing,Cutting_Output_as_percentage_of_Sewing_Output=Cutting_Output_as_percentage_of_Sewing_Output,
-                      Finishing_Output_as_percentage_of_Sewing_Output=Finishing_Output_as_percentage_of_Sewing_Output,Extra_Sewing_Machines_Required=Extra_Sewing_Machines_Required,
-                      Cutting_Loss=Cutting_Loss,Year1=Year1,Year2=Year2,Year3=Year3)
+    print('btnform2' in request.POST)
+    if request.method=='POST' and 'btnform2' in request.POST:
+        a=Absenteeis_and_Defective()
+        a.Sewing=request.POST.get('Sewing')
+        a.Cutting = request.POST.get('Cutting')
+        a.Finishing = request.POST.get('Finishing')
+        a.Cutting_Output_as_percentage_of_Sewing_Output = request.POST.get('Cutting_Output_as_percentage_of_Sewing_Output')
+        a.Finishing_Output_as_percentage_of_Sewing_Output = request.POST.get('Finishing_Output_as_percentage_of_Sewing_Output')
+        a.Extra_Sewing_Machines_Required = request.POST.get('Extra_Sewing_Machines_Required')
+        a.Cutting_Loss=request.POST.get('Cutting_Loss')
+        a.Year1=request.POST.get('Year1')
+        a.Year2=request.POST.get('Year2')
+        a.Year3=request.POST.get('Year3')
+        print('this is a',a)
+        # a=Absenteeis_and_Defective(Sewing=Sewing,Cutting=Cutting,
+        #               Finishing=Finishing,Cutting_Output_as_percentage_of_Sewing_Output=Cutting_Output_as_percentage_of_Sewing_Output,
+        #               Finishing_Output_as_percentage_of_Sewing_Output=Finishing_Output_as_percentage_of_Sewing_Output,Extra_Sewing_Machines_Required=Extra_Sewing_Machines_Required,
+        #               Cutting_Loss=Cutting_Loss,Year1=Year1,Year2=Year2,Year3=Year3)
         a.save()
 
         return render(request,'aform.html')

@@ -26,7 +26,7 @@ table, th, td {
 <div id="container">
   <div class="row">
     <div class="col">
-<h2 >Assumption</h2>
+<h2 id="form1">Assumption</h2>
 <form method="post"> {% csrf_token %}
 <label>No. of years:</label>
   <input type="text"  name="No_of_years"><br>
@@ -46,7 +46,7 @@ table, th, td {
   <input type="text"  name="Exchange_rate" id="v6" onchange="calc3()" value="0"><br>
     <input type="submit" value="Submit" name="btnform1">
 </form>
-        <h2 >Absenteeis and Defective</h2>
+        <h2 id="form2">Absenteeis and Defective</h2>
 
   <form method="post" > {% csrf_token %}
 
@@ -73,7 +73,7 @@ table, th, td {
 
     <input type="submit" value="Submit" name="btnform2">
 </form>
-                <h2 >Cost Assumptions</h2>
+                <h2 id="form3">Cost Assumptions</h2>
 
          <form method="post" > {% csrf_token %}
       <label>Electricity cost per KW-Hr (INR.)</label>
@@ -122,7 +122,77 @@ table, th, td {
   <input type="text"  name="v"><br>
     <input type="submit" value="Submit" name="btnform3">
 </form>
+            <h2 id="form4">Salary_growth_and_Incentives</h2>
+  <form method="post" > {% csrf_token %}
 
+<label>Salary Growth % year on year</label>
+  <input type="text"  name="z"  ><br>
+<label>Wages Growth % year on year</label>
+      <input type="text"  name="y"><br>
+    <label>Incentive % per annum</label>
+  <input type="text"  name="x" ><br>
+    <input type="submit" value="Submit" name="btnform4">
+
+</form>
+                        <h2 id="form5">Financial</h2>
+
+         <form method="post" > {% csrf_token %}
+      <label>Ratio D/E</label>
+  <input type="text"  name="a"  ><br>
+<label>Interest on Term Loan  Y1 & Y2</label>
+  <input type="text"  name="b"  ><br>
+<label>Interest on Term Loan  Y3 onwards</label>
+      <input type="text"  name="c"><br>
+<label>Interest on Working Capital Financing</label>
+      <input type="text"  name="d" ><br>
+    <label>Interest Income on Cash Surplus</label>
+  <input type="text"  name="e"><br>
+<label>Tax</label>
+  <input type="text"  name="f"><br>
+<label>Business Commissions on Sales Value (For 1st 3 yrs)</label>
+  <input type="text"  name="g" ><br>
+<label>Duty Draw Backs</label>
+  <input type="text"  name="h"><br>
+    <input type="submit" value="Submit" name="btnform5">
+
+</form>
+                                <h2 id="form6">Depreciation Schedule For Balance Sheet Straight Line</h2>
+
+                <form method="post" > {% csrf_token %}
+      <label>Factory Building</label>
+  <input type="text"  name="a"  ><br>
+<label>Plant & Machinery</label>
+  <input type="text"  name="b"  ><br>
+<label>IT</label>
+      <input type="text"  name="c"><br>
+<label>Misc Fixed Assets</label>
+      <input type="text"  name="d"><br>
+    <label>Amortisation of Pre Operative Expenses</label>
+  <input type="text"  name="e"  ><br>
+    <input type="submit" value="Submit" name="btnform6">
+
+</form>
+                                <h2 id="form7">Clearing & Forwarding Exports</h2>
+
+         <form method="post" > {% csrf_token %}
+      <label>For Exports</label>
+  <input type="text"  name="a"  ><br>
+<label>Average pieces per container</label>
+  <input type="text"  name="b"  ><br>
+<label>Port Handling charges (INR. per container) - all incl</label>
+      <input type="text"  name="c"><br>
+<label>Transportation (in INR./ container)</label>
+      <input type="text"  name="d" ><br>
+    <label>Material Handling @</label>
+  <input type="text"  name="e"><br>
+<label>Duty - Manual Machines</label>
+  <input type="text"  name="f"><br>
+<label>Duty - Electronic machines</label>
+  <input type="text"  name="g" ><br>
+
+    <input type="submit" value="Submit" name="btnform7">
+
+</form>
     </div>
     <div id="sidebar">
 {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}

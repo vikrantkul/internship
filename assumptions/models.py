@@ -58,21 +58,43 @@ class Cost_Assumptions(models.Model):
 
 
 class Salary_growth_and_Incentives(models.Model):
-    z=models.CharField('Salary Growth % year on year',max_length=25)
-    y=models.CharField('Wages Growth % year on year',max_length=25)
-    x=models.CharField('Incentive % per annum',max_length=25)
+    z=models.CharField('Salary Growth % year on year',max_length=25,null=True,blank=True)
+    y=models.CharField('Wages Growth % year on year',max_length=25,null=True,blank=True)
+    x=models.CharField('Incentive % per annum',max_length=25,null=True,blank=True)
     def __str__(self):
         return str(self.id)
 
 
 class Financial(models.Model):
-    a=models.CharField('Ratio D/E',max_length=25)
-    b=models.CharField('Interest on Term Loan  Y1 & Y2',max_length=25)
-    c=models.CharField('Interest on Term Loan  Y3 onwards',max_length=25)
-    d=models.CharField('Interest on Working Capital Financing',max_length=25)
-    e=models.CharField('Interest Income on Cash Surplus',max_length=25)
-    f=models.CharField('Tax',max_length=25)
-    g=models.CharField('Business Commissions on Sales Value (For 1st 3 yrs)',max_length=25)
-    h=models.CharField('Duty Draw Backs',max_length=25)
+    a=models.CharField('Ratio D/E',max_length=25,null=True,blank=True)
+    b=models.CharField('Interest on Term Loan  Y1 & Y2',max_length=25,null=True,blank=True)
+    c=models.CharField('Interest on Term Loan  Y3 onwards',max_length=25,null=True,blank=True)
+    d=models.CharField('Interest on Working Capital Financing',max_length=25,null=True,blank=True)
+    e=models.CharField('Interest Income on Cash Surplus',max_length=25,null=True,blank=True)
+    f=models.CharField('Tax',max_length=25,null=True,blank=True)
+    g=models.CharField('Business Commissions on Sales Value (For 1st 3 yrs)',max_length=25,null=True,blank=True)
+    h=models.CharField('Duty Draw Backs',max_length=25,null=True,blank=True)
+    def __str__(self):
+        return str(self.id)
+
+
+class Depreciation_Schedule_For_Balance_Sheet_Straight_Line(models.Model):
+    a=models.CharField('Factory Building ',max_length=25,null=True,blank=True)
+    b=models.CharField('Plant & Machinery',max_length=25,null=True,blank=True)
+    c=models.CharField('IT',max_length=25,null=True,blank=True)
+    d=models.CharField('Misc Fixed Assets',max_length=25,null=True,blank=True)
+    e=models.CharField('Amortisation of Pre Operative Expenses',max_length=25,null=True,blank=True)
+    def __str__(self):
+        return str(self.id)
+
+
+class Clearing_and_Forwarding_Exports(models.Model):
+    a=models.CharField('For Exports',max_length=25,null=True,blank=True)
+    b=models.CharField('Average pieces per container',max_length=25,null=True,blank=True)
+    c=models.CharField('Port Handling charges (INR. per container) - all incl',max_length=25,null=True,blank=True)
+    d=models.CharField('Transportation (in INR./ container)',max_length=25,null=True,blank=True)
+    e=models.CharField('Material Handling @',max_length=25,null=True,blank=True)
+    f=models.CharField('Duty - Manual Machines',max_length=25,null=True,blank=True)
+    g=models.CharField('Duty - Electronic machines',max_length=25,null=True,blank=True)
     def __str__(self):
         return str(self.id)

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Assumptions,Absenteeis_and_Defective,Cost_Assumptions,Salary_growth_and_Incentives,Financial
+from .models import Assumptions,Absenteeis_and_Defective,Cost_Assumptions,Salary_growth_and_Incentives,Financial,Depreciation_Schedule_For_Balance_Sheet_Straight_Line,Clearing_and_Forwarding_Exports
 
 
 
@@ -47,10 +47,7 @@ def create_assumption(request):
         a.Year1=request.POST.get('Year1')
         a.Year2=request.POST.get('Year2')
         a.Year3=request.POST.get('Year3')
-        # a=Absenteeis_and_Defective(Sewing=Sewing,Cutting=Cutting,
-        #               Finishing=Finishing,Cutting_Output_as_percentage_of_Sewing_Output=Cutting_Output_as_percentage_of_Sewing_Output,
-        #               Finishing_Output_as_percentage_of_Sewing_Output=Finishing_Output_as_percentage_of_Sewing_Output,Extra_Sewing_Machines_Required=Extra_Sewing_Machines_Required,
-        #               Cutting_Loss=Cutting_Loss,Year1=Year1,Year2=Year2,Year3=Year3)
+
         a.save()
 
         return render(request,'aform.html')
@@ -84,6 +81,59 @@ def create_assumption(request):
 
         ch.save()
 
+        return render(request,'aform.html')
+
+    if request.method == 'POST' and 'btnform4' in request.POST:
+        z=request.POST.get('z')
+        y = request.POST.get('y')
+        x = request.POST.get('x')
+
+        ch= Salary_growth_and_Incentives(z=z,y=y,x=x)
+
+        ch.save()
+
+        return render(request,'aform.html')
+
+
+
+    if request.method=='POST' and 'btnform5' in request.POST:
+        z=Financial()
+        z.a=request.POST.get('a')
+        z.b=request.POST.get('b')
+        z.c=request.POST.get('c')
+        z.d=request.POST.get('d')
+        z.e=request.POST.get('e')
+        z.f=request.POST.get('f')
+        z.g=request.POST.get('g')
+        z.h=request.POST.get('h')
+
+        z.save()
+        return render(request,'aform.html')
+
+
+    if request.method=='POST' and 'btnform6' in request.POST:
+        z=Depreciation_Schedule_For_Balance_Sheet_Straight_Line()
+        z.a=request.POST.get('a')
+        z.b=request.POST.get('b')
+        z.c=request.POST.get('c')
+        z.d=request.POST.get('d')
+        z.e=request.POST.get('e')
+
+        z.save()
+        return render(request,'aform.html')
+
+
+    if request.method=='POST' and 'btnform7' in request.POST:
+        z=Clearing_and_Forwarding_Exports()
+        z.a=request.POST.get('a')
+        z.b=request.POST.get('b')
+        z.c=request.POST.get('c')
+        z.d=request.POST.get('d')
+        z.e=request.POST.get('e')
+        z.f=request.POST.get('f')
+        z.g=request.POST.get('g')
+
+        z.save()
         return render(request,'aform.html')
     else:
         return render(request,'aform.html')

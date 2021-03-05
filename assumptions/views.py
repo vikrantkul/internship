@@ -34,12 +34,7 @@ def create_assumption(request):
         a.save()
 
         return render(request,'aform.html',context)
-    else:
-        return render(request,'aform.html')
 
-
-def create_Absenteeis_and_Defective(request):
-    print('btnform2' in request.POST)
     if request.method=='POST' and 'btnform2' in request.POST:
         a=Absenteeis_and_Defective()
         a.Sewing=request.POST.get('Sewing')
@@ -52,7 +47,6 @@ def create_Absenteeis_and_Defective(request):
         a.Year1=request.POST.get('Year1')
         a.Year2=request.POST.get('Year2')
         a.Year3=request.POST.get('Year3')
-        print('this is a',a)
         # a=Absenteeis_and_Defective(Sewing=Sewing,Cutting=Cutting,
         #               Finishing=Finishing,Cutting_Output_as_percentage_of_Sewing_Output=Cutting_Output_as_percentage_of_Sewing_Output,
         #               Finishing_Output_as_percentage_of_Sewing_Output=Finishing_Output_as_percentage_of_Sewing_Output,Extra_Sewing_Machines_Required=Extra_Sewing_Machines_Required,
@@ -60,40 +54,36 @@ def create_Absenteeis_and_Defective(request):
         a.save()
 
         return render(request,'aform.html')
-    else:
-        return render(request,'aform.html')
 
+    if request.method == 'POST' and 'btnform3' in request.POST:
+        a=request.POST.get('a')
+        b = request.POST.get('b')
+        c = request.POST.get('c')
+        d = request.POST.get('d')
+        e = request.POST.get('e')
+        f = request.POST.get('f')
+        g=request.POST.get('g')
+        h=request.POST.get('h')
+        i=request.POST.get('i')
+        j=request.POST.get('j')
+        k = request.POST.get('k')
+        l = request.POST.get('l')
+        m = request.POST.get('m')
+        n = request.POST.get('n')
+        o = request.POST.get('o')
+        p = request.POST.get('p')
+        q = request.POST.get('q')
+        r = request.POST.get('r')
+        s = request.POST.get('s')
+        t = request.POST.get('t')
+        u = request.POST.get('u')
+        v = request.POST.get('v')
 
-def create_Cost_Assumptions(request):
-        if request.method=='POST':
-            a=request.POST.get('a')
-            b = request.POST.get('b')
-            c = request.POST.get('c')
-            d = request.POST.get('d')
-            e = request.POST.get('e')
-            f = request.POST.get('f')
-            g=request.POST.get('g')
-            h=request.POST.get('h')
-            i=request.POST.get('i')
-            j=request.POST.get('j')
-            k = request.POST.get('k')
-            l = request.POST.get('l')
-            m = request.POST.get('m')
-            n = request.POST.get('n')
-            o = request.POST.get('o')
-            p = request.POST.get('p')
-            q = request.POST.get('q')
-            r = request.POST.get('r')
-            s = request.POST.get('s')
-            t = request.POST.get('t')
-            u = request.POST.get('u')
-            v = request.POST.get('v')
-
-            ch=Cost_Assumptions(a=a,b=b,c=c,d=d,e=e,f=f,g=g,h=h,i=i,j=j,
+        ch=Cost_Assumptions(a=a,b=b,c=c,d=d,e=e,f=f,g=g,h=h,i=i,j=j,
                                k=k,l=l,m=m,n=n,o=o,p=p,q=q,r=r,s=s,t=t,u=u,v=v)
 
-            ch.save()
+        ch.save()
 
-            return render(request,'aform.html')
-        else:
-            return render(request,'aform.html')
+        return render(request,'aform.html')
+    else:
+        return render(request,'aform.html')

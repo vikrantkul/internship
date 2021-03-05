@@ -48,7 +48,7 @@ table, th, td {
 </form>
         <h2 >Absenteeis and Defective</h2>
 
-  <form method="post" action="../Absenteeis_and_Defective/"> {% csrf_token %}
+  <form method="post" > {% csrf_token %}
 
 <label>Sewing:</label>
   <input type="text"  name="Sewing"  ><br>
@@ -120,7 +120,7 @@ table, th, td {
   <input type="text"  name="u"><br>
 <label>Provision for contingency:</label>
   <input type="text"  name="v"><br>
-    <input type="submit" value="Submit">
+    <input type="submit" value="Submit" name="btnform3">
 </form>
 
     </div>

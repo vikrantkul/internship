@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Assumptions,Absenteeis_and_Defective,Cost_Assumptions,Salary_growth_and_Incentives,Financial,Depreciation_Schedule_For_Balance_Sheet_Straight_Line,Clearing_and_Forwarding_Exports,Working_capital_ratios_and_assumtpions,Preliminary_and_Preoperative_expenses,Number_of_Lines,Assumptions_for_Production_Calculations,Machinery_Growth_Figures,No_of_Operators_per_line_as_per_Operation_Bulletin
+from .models import Assumptions,Absenteeis_and_Defective,Cost_Assumptions,Salary_growth_and_Incentives,Financial,Depreciation_Schedule_For_Balance_Sheet_Straight_Line,Clearing_and_Forwarding_Exports,Working_capital_ratios_and_assumtpions,Preliminary_and_Preoperative_expenses,Number_of_Lines,Assumptions_for_Production_Calculations,Machinery_Growth_Figures,No_of_Operators_per_line_as_per_Operation_Bulletin,Number_of_machines_planned
 
 
 
@@ -214,6 +214,28 @@ def create_assumption(request):
 
 
         z.save()
+        return render(request,'aform.html')
+
+
+    if request.method == 'POST' and 'btnform14' in request.POST:
+        a=request.POST.get('1Year1')
+        b = request.POST.get('1Year2')
+        c = request.POST.get('1Year3')
+        d = request.POST.get('1Year4')
+        e = request.POST.get('1Year5')
+        f = request.POST.get('2Year1')
+        g =request.POST.get('2Year2')
+        h=request.POST.get('2Year3')
+        i=request.POST.get('2Year4')
+        j=request.POST.get('2Year5')
+        k = request.POST.get('3Year1')
+        l = request.POST.get('3Year2')
+        m = request.POST.get('3Year3')
+        n = request.POST.get('3Year4')
+        o = request.POST.get('3Year5')
+        ch=Number_of_machines_planned(a=a,b=b,c=c,d=d,e=e,f=f,g=g,h=h,i=i,j=j,
+                               k=k,l=l,m=m,n=n,o=o)
+        ch.save()
         return render(request,'aform.html')
     else:
         return render(request,'aform.html')

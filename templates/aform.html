@@ -353,8 +353,49 @@ table, th, td {
     <td><input type="text"  name="d" ></td>
   </tr>
 </table>
+    <br>
     <input type="submit" value="Submit" name="btnform13">
 </form>
+
+        <h2 id="form13">Number of machines planned</h2>
+<form method="post" > {% csrf_token %}
+<table>
+  <tr>
+    <th></th>
+      {% for i in list1 %}
+    <th>Year{{i}}</th>
+      {% endfor %}
+  </tr>
+  <tr>
+      <td>No. of Machines Planned</td>
+      {% for i in list1 %}
+      <td><input type="text"  name="1Year{{i}}" id="n{{i}}" onchange="calc4()" ></td>
+      {% endfor %}
+  </tr>
+  <tr>
+      <td>Total</td>
+      {% for i in list1 %}
+      <td><input type="text"  name="2Year{{i}}" id="m{{i}}" readonly></td>
+      {% endfor %}
+  </tr>
+  <tr>
+      <td>New added capacity as % of total capacity </td>
+      {% for i in list1 %}
+      <td><input type="text"  name="3Year{{i}}" ></td>
+      {% endfor %}
+  </tr>
+</table>
+    <br>
+    <input type="submit" value="Submit" name="btnform14">
+</form>
+
+
+
+
+
+
+
+
     </div>
     <div id="sidebar">
 {% block sidebar %} {% include 'sidebar.html' %} {% endblock sidebar %}
@@ -370,7 +411,6 @@ table, th, td {
   var c= a*60
   document.getElementById('v2').value=b;
   document.getElementById('v3').value=c;
-
  }
    function calc2(){
   var a=parseInt(document.getElementById('v4').value);
@@ -386,6 +426,18 @@ table, th, td {
     document.getElementById('v8').value=c;
     document.getElementById('v9').value=d;
 
+  }
+  function calc4{
+      var a=document.getElementById('n1').value;
+      var b=document.getElementById('n2').value;
+      var c=document.getElementById('n3').value;
+      var d=document.getElementById('n4').value;
+      var e=document.getElementById('n5').value;
+      document.getElementById('m1').value=a;
+      document.getElementById('m2').value=b;
+      document.getElementById('m3').value=c;
+      document.getElementById('m4').value=d;
+      document.getElementById('m5').value=e;
   }
 </script>
 </html>

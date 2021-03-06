@@ -165,3 +165,22 @@ class No_of_Operators_per_line_as_per_Operation_Bulletin(models.Model):
     d=models.CharField('Style variation summary(no. of machines)',max_length=25,null=True,blank=True)
     def __str__(self):
         return str(self.id)
+
+class Number_of_machines_planned(models.Model):
+    a = models.CharField('Year1', max_length=25, null=True, blank=True)
+    b = models.CharField('Year2', max_length=25, null=True, blank=True)
+    c = models.CharField('Year3', max_length=25, null=True, blank=True)
+    d = models.CharField('Year4', max_length=25, null=True, blank=True)
+    e = models.CharField('Year5', max_length=25, null=True, blank=True)
+    f = models.CharField('total(Year1)', max_length=25, null=True, blank=True)
+    g = models.CharField('total(Year2)', max_length=25, null=True, blank=True)
+    h = models.CharField('total(Year3)', max_length=25, null=True, blank=True)
+    i = models.CharField('total(Year4)', max_length=25, null=True, blank=True)
+    j = models.CharField('total(Year5)', max_length=25, null=True, blank=True)
+    k = models.CharField('New added capacity as % of total capacity (Year1)', max_length=25, null=True, blank=True)
+    l = models.CharField('New added capacity as % of total capacity (Year2)', max_length=25, null=True, blank=True)
+    m = models.CharField('New added capacity as % of total capacity (Year3)', max_length=25, null=True, blank=True)
+    n = models.CharField('New added capacity as % of total capacity (Year4)', max_length=25, null=True, blank=True)
+    o = models.CharField('New added capacity as % of total capacity (Year5)', max_length=25, null=True, blank=True)
+    def __str__(self):
+        return str(self.id)

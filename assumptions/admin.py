@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Assumptions,Absenteeis_and_Defective,Cost_Assumptions,Salary_growth_and_Incentives,Financial,Depreciation_Schedule_For_Balance_Sheet_Straight_Line,Clearing_and_Forwarding_Exports
+from .models import Assumptions,Absenteeis_and_Defective,Cost_Assumptions,Salary_growth_and_Incentives,Financial,Depreciation_Schedule_For_Balance_Sheet_Straight_Line,Clearing_and_Forwarding_Exports,Working_capital_ratios_and_assumtpions,Preliminary_and_Preoperative_expenses,Number_of_Lines,Assumptions_for_Production_Calculations,Machinery_Growth_Figures,No_of_Operators_per_line_as_per_Operation_Bulletin
 # class AssumptionsAdmin(admin.ModelAdmin):
 #     prepopulated_fields = {"slug": ('self.slug',)}
 
@@ -10,5 +10,11 @@ admin.site.register(Salary_growth_and_Incentives)
 admin.site.register(Financial)
 admin.site.register(Depreciation_Schedule_For_Balance_Sheet_Straight_Line)
 admin.site.register(Clearing_and_Forwarding_Exports)
+admin.site.register(Working_capital_ratios_and_assumtpions)
+admin.site.register(Preliminary_and_Preoperative_expenses)
+admin.site.register(Number_of_Lines)
+admin.site.register(Assumptions_for_Production_Calculations)
+admin.site.register(Machinery_Growth_Figures)
+admin.site.register(No_of_Operators_per_line_as_per_Operation_Bulletin)
 
 

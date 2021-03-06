@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Assumptions,Absenteeis_and_Defective,Cost_Assumptions,Salary_growth_and_Incentives,Financial,Depreciation_Schedule_For_Balance_Sheet_Straight_Line,Clearing_and_Forwarding_Exports
+from .models import Assumptions,Absenteeis_and_Defective,Cost_Assumptions,Salary_growth_and_Incentives,Financial,Depreciation_Schedule_For_Balance_Sheet_Straight_Line,Clearing_and_Forwarding_Exports,Working_capital_ratios_and_assumtpions,Preliminary_and_Preoperative_expenses,Number_of_Lines,Assumptions_for_Production_Calculations,Machinery_Growth_Figures,No_of_Operators_per_line_as_per_Operation_Bulletin
 
 
 
@@ -132,6 +132,86 @@ def create_assumption(request):
         z.e=request.POST.get('e')
         z.f=request.POST.get('f')
         z.g=request.POST.get('g')
+
+        z.save()
+        return render(request,'aform.html')
+
+    if request.method == 'POST' and 'btnform8' in request.POST:
+        a=request.POST.get('a')
+        b = request.POST.get('b')
+        c = request.POST.get('c')
+        d = request.POST.get('d')
+        e = request.POST.get('e')
+        f = request.POST.get('f')
+        g =request.POST.get('g')
+        h=request.POST.get('h')
+        i=request.POST.get('i')
+        j=request.POST.get('j')
+        k = request.POST.get('k')
+        l = request.POST.get('l')
+        m = request.POST.get('m')
+        n = request.POST.get('n')
+        o = request.POST.get('o')
+        p = request.POST.get('p')
+        q = request.POST.get('q')
+        r = request.POST.get('r')
+        z=Working_capital_ratios_and_assumtpions(a=a,b=b,c=c,d=d,e=e,f=f,g=g,h=h,i=i,j=j,
+                               k=k,l=l,m=m,n=n,o=o,p=p,q=q,r=r)
+        z.save()
+        return render(request,'aform.html')
+
+    if request.method=='POST' and 'btnform9' in request.POST:
+        z=Preliminary_and_Preoperative_expenses()
+        z.a=request.POST.get('a')
+        z.b=request.POST.get('b')
+        z.c=request.POST.get('c')
+        z.d=request.POST.get('d')
+        z.e=request.POST.get('e')
+        z.f=request.POST.get('f')
+
+        z.save()
+        return render(request,'aform.html')
+
+    if request.method=='POST' and 'btnform10' in request.POST:
+        z=Number_of_Lines()
+        z.a=request.POST.get('Year1')
+        z.b=request.POST.get('Year2')
+        z.c=request.POST.get('Year3')
+        z.d=request.POST.get('Year4')
+        z.e=request.POST.get('Year5')
+
+        z.save()
+        return render(request,'aform.html')
+
+    if request.method=='POST' and 'btnform11' in request.POST:
+        z=Assumptions_for_Production_Calculations()
+        z.a=request.POST.get('Year1')
+        z.b=request.POST.get('Year2')
+        z.c=request.POST.get('Year3')
+        z.d=request.POST.get('Year4')
+        z.e=request.POST.get('Year5')
+
+        z.save()
+        return render(request,'aform.html')
+
+    if request.method=='POST' and 'btnform12' in request.POST:
+        z=Machinery_Growth_Figures()
+        z.a=request.POST.get('Year1')
+        z.b=request.POST.get('Year2')
+        z.c=request.POST.get('Year3')
+        z.d=request.POST.get('Year4')
+        z.e=request.POST.get('Year5')
+
+        z.save()
+        return render(request,'aform.html')
+
+    if request.method=='POST' and 'btnform13' in request.POST:
+        z=No_of_Operators_per_line_as_per_Operation_Bulletin()
+        z.a=request.POST.get('a')
+        z.b=request.POST.get('b')
+        z.c=request.POST.get('c')
+        z.d=request.POST.get('d')
+
 
         z.save()
         return render(request,'aform.html')

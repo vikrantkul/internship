@@ -98,3 +98,70 @@ class Clearing_and_Forwarding_Exports(models.Model):
     g=models.CharField('Duty - Electronic machines',max_length=25,null=True,blank=True)
     def __str__(self):
         return str(self.id)
+
+class Working_capital_ratios_and_assumtpions(models.Model):
+    a=models.CharField('Working Capital Ratio(Owner)',max_length=25,null=True,blank=True)
+    b=models.CharField('Working Capital Ratio(Bank)',max_length=25,null=True,blank=True)
+    c=models.CharField('Inv. Raw Material (at Raw material Cost) Month(Owner)',max_length=25,null=True,blank=True)
+    d=models.CharField('Inv. Raw Material (at Raw material Cost) Month(Bank)',max_length=25,null=True,blank=True)
+    e=models.CharField('Work In Process(at Raw material Cost) Month(owner)',max_length=25,null=True,blank=True)
+    f=models.CharField('Work In Process(at Raw material Cost) Month](Bank)',max_length=25,null=True,blank=True)
+    g=models.CharField('Finished Goods (at Variable/Sourcing Cost) Month(Owner)',max_length=25,null=True,blank=True)
+    h=models.CharField('Finished Goods (at Variable/Sourcing Cost) Month(Bank)',max_length=25,null=True,blank=True)
+    i=models.CharField('Finished Goods In Transit + Buyers Credit(at Cost of Prod) Month(Owner)',max_length=25,null=True,blank=True)
+    j=models.CharField('Finished Goods In Transit + Buyers Credit(at Cost of Prod) Month(Bank)',max_length=25,null=True,blank=True)
+    k=models.CharField('Spare Parts ( Month)(owner)',max_length=25,null=True,blank=True)
+    l=models.CharField('Spare Parts ( Month)(Bank)',max_length=25,null=True,blank=True)
+    m = models.CharField('Creditors (at Raw material cost) Month(owner)', max_length=25, null=True, blank=True)
+    n = models.CharField('Creditors (at Raw material cost) Month(Bank)', max_length=25, null=True, blank=True)
+    o = models.CharField('Debtors (at cost of Finished goods) Month(owner)', max_length=25, null=True, blank=True)
+    p= models.CharField('Debtors (at cost of Finished goods) Month(Bank)', max_length=25, null=True, blank=True)
+    q = models.CharField('Indirect Expenses(owner)', max_length=25, null=True, blank=True)
+    r = models.CharField('Indirect Expenses(Bank)', max_length=25, null=True, blank=True)
+    def __str__(self):
+        return str(self.id)
+
+class Preliminary_and_Preoperative_expenses(models.Model):
+    a=models.CharField('Hiring Costs',max_length=25,null=True,blank=True)
+    b=models.CharField('Relocation for Key Staff',max_length=25,null=True,blank=True)
+    c=models.CharField('Salaries',max_length=25,null=True,blank=True)
+    d=models.CharField('Overheads',max_length=25,null=True,blank=True)
+    e=models.CharField('Cost of raw material during Training & Trial production',max_length=25,null=True,blank=True)
+    f=models.CharField('Consulting Fees and Technology Fee for Garment Unit',max_length=25,null=True,blank=True)
+    def __str__(self):
+        return str(self.id)
+
+class Number_of_Lines(models.Model):
+    a=models.CharField('Hi Fashion(Year1)',max_length=25,null=True,blank=True)
+    b=models.CharField('Hi Fashion(Year2)',max_length=25,null=True,blank=True)
+    c=models.CharField('Hi Fashion(Year3)',max_length=25,null=True,blank=True)
+    d=models.CharField('Hi Fashion(Year4)',max_length=25,null=True,blank=True)
+    e=models.CharField('Hi Fashion(Year5)',max_length=25,null=True,blank=True)
+    def __str__(self):
+        return str(self.id)
+
+class Assumptions_for_Production_Calculations(models.Model):
+    a=models.CharField('Area per sewing machine (sq ft.)(Year1)',max_length=25,null=True,blank=True)
+    b=models.CharField('Area per sewing machine (sq ft.)(Year2)',max_length=25,null=True,blank=True)
+    c=models.CharField('Area per sewing machine (sq ft.)(Year3)',max_length=25,null=True,blank=True)
+    d=models.CharField('Area per sewing machine (sq ft.)(Year4)',max_length=25,null=True,blank=True)
+    e=models.CharField('Area per sewing machine (sq ft.)(Year5)',max_length=25,null=True,blank=True)
+    def __str__(self):
+        return str(self.id)
+
+class Machinery_Growth_Figures(models.Model):
+    a=models.CharField('Cummulative Machines(Year1)',max_length=25,null=True,blank=True)
+    b=models.CharField('Cummulative Machines(Year2)',max_length=25,null=True,blank=True)
+    c=models.CharField('Cummulative Machines(Year3)',max_length=25,null=True,blank=True)
+    d=models.CharField('Cummulative Machines(Year4)',max_length=25,null=True,blank=True)
+    e=models.CharField('Cummulative Machines(Year5)',max_length=25,null=True,blank=True)
+    def __str__(self):
+        return str(self.id)
+
+class No_of_Operators_per_line_as_per_Operation_Bulletin(models.Model):
+    a=models.CharField('Hi Fashion(no. of machines)',max_length=25,null=True,blank=True)
+    b=models.CharField('Sampling(no. of machines)',max_length=25,null=True,blank=True)
+    c=models.CharField('Training(no. of machines)',max_length=25,null=True,blank=True)
+    d=models.CharField('Style variation summary(no. of machines)',max_length=25,null=True,blank=True)
+    def __str__(self):
+        return str(self.id)

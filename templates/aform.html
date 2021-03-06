@@ -9,12 +9,18 @@
   </head>
   <body>
   <style>
+  html {
+  scroll-behavior: smooth;
+}
+
+
       #container {
     max-width:70%;
     margin-left:auto;
     margin-right:auto;
     margin-top:25px;
-    overflow:hidden;
+    margin-bottom:30px;
+    overflow:auto;
 
 }
 table, th, td {
@@ -43,7 +49,7 @@ table, th, td {
 <label>No_of_shifts_per_day:</label>
   <input type="text"  name="No_of_shifts_per_day"><br>
 <label>Exchange_rate:<br>1$= </br></label>
-  <input type="text"  name="Exchange_rate" id="v6" onchange="calc3()" value="0"><br>
+  <input type="text"  name="Exchange_rate" id="v6" onchange="calc3()"><br>
     <input type="submit" value="Submit" name="btnform1">
 </form>
         <h2 id="form2">Absenteeis and Defective</h2>
@@ -122,7 +128,7 @@ table, th, td {
   <input type="text"  name="v"><br>
     <input type="submit" value="Submit" name="btnform3">
 </form>
-            <h2 id="form4">Salary_growth_and_Incentives</h2>
+            <h2 id="form4">Salary growth and Incentives</h2>
   <form method="post" > {% csrf_token %}
 
 <label>Salary Growth % year on year</label>
@@ -170,28 +176,184 @@ table, th, td {
     <label>Amortisation of Pre Operative Expenses</label>
   <input type="text"  name="e"  ><br>
     <input type="submit" value="Submit" name="btnform6">
-
 </form>
-                                <h2 id="form7">Clearing & Forwarding Exports</h2>
+        <h2 id="form7">Clearing & Forwarding Exports</h2>
+         <form method="post" > {% csrf_token %}
+             <label>For Exports</label>
+             <input type="text"  name="a"  ><br>
+             <label>Average pieces per container</label>
+             <input type="text"  name="b"  ><br>
+             <label>Port Handling charges (INR. per container) - all incl</label>
+             <input type="text"  name="c"><br>
+             <label>Transportation (in INR./ container)</label>
+             <input type="text"  name="d" ><br>
+             <label>Material Handling @</label>
+             <input type="text"  name="e"><br>
+             <label>Duty - Manual Machines</label>
+             <input type="text"  name="f"><br>
+             <label>Duty - Electronic machines</label>
+             <input type="text"  name="g" ><br>
+             <input type="submit" value="Submit" name="btnform7">
+</form>
+        <h2 id="form8">Working capital ratios and assumtpions</h2>
+<form method="post" > {% csrf_token %}
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Owner's</th>
+    <th>Bank's</th>
+  </tr>
+  <tr>
+    <td>Working Capital Ratio(Owner)</td>
+    <td><input type="text"  name="a" ></td>
+    <td><input type="text"  name="b" ></td>
+  </tr>
+  <tr>
+    <td>Inv. Raw Material (at Raw material Cost) Month</td>
+    <td><input type="text"  name="c" ></td>
+    <td><input type="text"  name="d" ></td>
+  </tr>
+  <tr>
+    <td>Work In Process(at Raw material Cost) Month</td>
+    <td><input type="text"  name="e" ></td>
+    <td><input type="text"  name="f" ></td>
+  </tr>
+  <tr>
+    <td>Finished Goods (at Variable/Sourcing Cost) Month</td>
+    <td><input type="text"  name="g" ></td>
+    <td><input type="text"  name="h" ></td>
+  </tr>
+  <tr>
+    <td>Finished Goods In Transit + Buyers Credit(at Cost of Prod) Month</td>
+    <td><input type="text"  name="i" ></td>
+    <td><input type="text"  name="j" ></td>
+  </tr>
+  <tr>
+    <td>Spare Parts ( Month)</td>
+    <td><input type="text"  name="k" ></td>
+    <td><input type="text"  name="l" ></td>
+  </tr>
+  <tr>
+    <td>Creditors (at Raw material cost) Month</td>
+    <td><input type="text"  name="m" ></td>
+    <td><input type="text"  name="n" ></td>
+  </tr>
+  <tr>
+    <td>Debtors (at cost of Finished goods) Month</td>
+    <td><input type="text"  name="o" ></td>
+    <td><input type="text"  name="p" ></td>
+  </tr>
+  <tr>
+    <td>Indirect Expenses</td>
+    <td><input type="text"  name="q" ></td>
+    <td><input type="text"  name="r" ></td>
+  </tr>
+</table>
+<input type="submit" value="Submit" name="btnform8">
+</form>
+        <h2 id="form9">Preliminary and Preoperative expenses</h2>
+         <form method="post" > {% csrf_token %}
+      <label>Hiring Costs</label>
+  <input type="text"  name="a"  ><br>
+<label>Relocation for Key Staff</label>
+  <input type="text"  name="b"  ><br>
+<label>Salaries</label>
+      <input type="text"  name="c"><br>
+<label>Overheads</label>
+      <input type="text"  name="d" ><br>
+    <label>Cost of raw material during Training & Trial production</label>
+  <input type="text"  name="e"><br>
+<label>Consulting Fees and Technology Fee for Garment Unit</label>
+  <input type="text"  name="f"><br>
+<input type="submit" value="Submit" name="btnform9">
+</form>
+        <h2 id="form10">Number of Lines</h2>
 
          <form method="post" > {% csrf_token %}
-      <label>For Exports</label>
-  <input type="text"  name="a"  ><br>
-<label>Average pieces per container</label>
-  <input type="text"  name="b"  ><br>
-<label>Port Handling charges (INR. per container) - all incl</label>
-      <input type="text"  name="c"><br>
-<label>Transportation (in INR./ container)</label>
-      <input type="text"  name="d" ><br>
-    <label>Material Handling @</label>
-  <input type="text"  name="e"><br>
-<label>Duty - Manual Machines</label>
-  <input type="text"  name="f"><br>
-<label>Duty - Electronic machines</label>
-  <input type="text"  name="g" ><br>
+        <table>
+  <tr>
+    <th>Number of Lines</th>
+      {% for i in list1 %}
+    <th>Year{{i}}</th>
+            {% endfor %}
 
-    <input type="submit" value="Submit" name="btnform7">
+</tr>
+            <tr>
+                <td>Hi Fashion</td>
+      {% for i in list1 %}
+    <td><input type="text"  name="Year{{i}}" ></td>
+            {% endfor %}
+            </tr>
+        </table>
+             <br>
+             <input type="submit" value="Submit" name="btnform10">
+         </form>
+        <h2 id="form11">Assumptions for Production Calculations</h2>
 
+         <form method="post" > {% csrf_token %}
+             <table>
+  <tr>
+    <th>Assumptions for Production Calculations</th>
+      {% for i in list1 %}
+    <th>Year{{i}}</th>
+            {% endfor %}
+  </tr>
+            <tr>
+                <td>Area per sewing machine (sq ft.)</td>
+      {% for i in list1 %}
+    <td><input type="text"  name="Year{{i}}" ></td>
+            {% endfor %}
+            </tr>
+             </table>
+             <br>
+             <input type="submit" value="Submit" name="btnform11">
+         </form>
+                <h2 id="form12">Machinery Growth Figures</h2>
+
+         <form method="post" > {% csrf_token %}
+        <table>
+  <tr>
+    <th>Machinery Growth Figures</th>
+      {% for i in list1 %}
+    <th>Year{{i}}</th>
+            {% endfor %}
+
+</tr>
+            <tr>
+                <td>Cummulative Machines</td>
+      {% for i in list1 %}
+    <td><input type="text"  name="Year{{i}}" ></td>
+            {% endfor %}
+            </tr>
+        </table>
+             <br>
+             <input type="submit" value="Submit" name="btnform12">
+         </form>
+                <h2 id="form13">No. of Operators per line as per Operation Bulletin</h2>
+<form method="post" > {% csrf_token %}
+<table>
+  <tr>
+    <th>No. of Operators per line as per Operation Bulletin</th>
+    <th>No. of Machines</th>
+  </tr>
+  <tr>
+    <td>Hi Fashion</td>
+    <td><input type="text"  name="a" ></td>
+  </tr>
+  <tr>
+    <td>Sampling</td>
+    <td><input type="text"  name="b" ></td>
+  </tr>
+  <tr>
+    <td>Training</td>
+    <td><input type="text"  name="c" ></td>
+  </tr>
+    <tr>
+    <td>Style variation machines</td>
+    <td><input type="text"  name="d" ></td>
+  </tr>
+</table>
+    <input type="submit" value="Submit" name="btnform13">
 </form>
     </div>
     <div id="sidebar">

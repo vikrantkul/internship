@@ -1,0 +1,19 @@
+table{
+	border-collapse:collapse;
+}
+
+
+#leftbox { 
+                float:left; 
+                width:50%; 
+                height:280px; 
+				background:silver;
+            } 
+
+#rightbox{ 
+                float:right; 
+                background:silver; 
+                width:50%; 
+                height:280px; 
+
+}

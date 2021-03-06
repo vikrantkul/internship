@@ -1,0 +1,239 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capacity and Revenue</title>
+	<link rel='stylesheet' href='{% static "styles\cap&rev.css" %}'>
+
+</head>
+<body background='{%static "..\static\images\10.jpeg" %}'>
+<br>
+<br>
+<hr>
+<hr>
+<div>
+
+	<div id='cap-n-rev-assu'>
+		<br><br>
+		<Table border='1px'>
+			<tr   style="font-weight: bold; background:rgb(255, 205, 39)">
+                <td colspan='2'>CAPACITY AND REVENUE</td>
+            </tr>
+
+			<tr   style="font-weight: bold; background:rgb(255, 205, 39)">
+                <td colspan='2'>Assumptions</td>
+            </tr>
+			
+            <tr   class='blankrow'>
+                <td>No of working days per month</td>
+                <td style='background:rgb(255, 255, 255)'>{{hgfhj}}</td> 
+            </tr>
+			
+            <tr   class='blankrow'>
+                <td>Total no of Production days per year</td>
+                <td style='background:rgb(255, 255, 255)'>{{hai}}</td>
+            </tr>
+		</table>
+		<br><br>
+		<Table border='1px' class='blankrow'>
+			<tr   style="font-weight: bold; background:rgb(255, 205, 39)">
+				<td>Per Line figure</td>
+				<td>Production per line @100%</td>
+				<td>No of Helpers</td>
+				<td>No of Checkers</td>
+				<td>Total</td>
+			</tr>
+			
+			<tr  class='blankrow'  style='background:rgb(255, 255, 255)'>
+				<td style='background:silver'>Trouser</td>
+				<td>{{hai}}</td>
+				<td>{{hai}}</td>
+				<td>{{hai}}</td>
+				<td>{{hai}}</td>
+			</tr>
+		</table>
+
+
+	</div>
+	<div id='Qua-Bre-Ass'>
+		<br><br>
+		<Table border='1px'>
+			<tr >
+				<td colspan='5' style="font-weight: bold ; background:rgb(255, 205, 39)"> Quarterly Breakups - Assumptions</td>
+			</tr>
+			{% for j in indexing %}
+			<tr  >
+				<td rowspan=2 style="font-weight: bold;">year: {{j}}</td>
+				<td>Quarter 1</td>
+				<td>Quarter 2</td>
+				<td>Quarter 3</td>
+				<td>Quarter 4</td>
+			</tr>
+			
+			<tr  class='blankrow'  style='background:rgb(255, 255, 255)'>
+			
+				<td>{{j}}</td>
+				<td>{{j}}</td>
+				<td>{{j}}</td>
+				<td>{{j}}</td>
+			</tr>
+            {% endfor %}
+		</table>
+	
+	
+	</div>
+</div>
+
+
+
+<div id="total_assumptions_table">
+
+    <table border="1px solid black" >
+        
+        <tr style="font-weight: bold; background:rgb(255, 205, 39)">
+            {% with year='year : ' %}
+            <td>Description</td>
+            {% for i,z in zipped_data0 %}
+                <td  height='20px'>{{year}}{{i}}</td>
+            {% endfor %}
+            {% endwith %}
+        </tr>
+
+
+
+
+        <tr>
+            <td>Final Productivity Factor Build-Up</td>
+            {% for i,z in zipped_data1 %}
+                <td  height='20px'  style='background:rgb(255, 255, 255)'>{{i}}{{z}}</td>
+            {% endfor %}
+        </tr>
+        <tr >
+            <td>No. of Lines</td>
+            {% for i,z in zipped_data2 %}
+                <td  height='20px'  style='background:rgb(255, 255, 255)'>{{i}}{{z}}</td>
+            {% endfor %}
+        </tr>
+        <tr >
+            <td>No. of actual machines running</td>
+            {% for i,z in zipped_data3 %}
+                <td  height='20px'  style='background:rgb(255, 255, 255)'>{{i}}{{z}}</td>
+            {% endfor %}
+        </tr>
+        <tr >
+            <td>Daily Production (Pcs.)</td>
+            {% for i,z in zipped_data4 %}
+                <td  height='20px'  style='background:rgb(255, 255, 255)'>{{i}}{{z}}</td>
+            {% endfor %}
+        </tr>
+        <tr >
+            <td>Total Annual production</td>
+            {% for i,z in zipped_data5 %}
+                <td  height='20px'  style='background:rgb(255, 255, 255)'>{{i}}{{z}}</td>
+            {% endfor %}
+        </tr>
+        <tr >
+            <td>Total Sewing SAM's earned</td>
+            {% for i,z in zipped_data6 %}
+                <td  height='20px'  style='background:rgb(255, 255, 255)'>{{i}}{{z}}</td>
+            {% endfor %}
+        </tr>
+        <tr >
+            <td>Total SAM's earned</td>
+            {% for i,z in zipped_data7 %}
+                <td  height='20px'  style='background:rgb(255, 255, 255)'>{{i}}{{z}}</td>
+            {% endfor %}
+        </tr>
+        <tr >
+            <td>Revenue (INR)</td>
+            {% for i,z in zipped_data8 %}
+                <td  height='20px'  style='background:rgb(255, 255, 255)'>{{i}}{{z}}</td>
+            {% endfor %}
+        </tr>
+        <tr >
+            <td>Total in Mn INR</td>
+            {% for i,z in zipped_data9 %}
+                <td  height='20px'  style='background:rgb(255, 255, 255)'>{{i}}{{z}}</td>
+            {% endfor %}
+        </tr>
+
+    </table>
+</div>
+
+<br>
+<div id="total_costing_table">
+    <table border="1px solid black" >
+        
+        <tr style="font-weight: bold ; background:rgb(255, 205, 39)">
+            {% with year='year : ' %}
+            <td>Description</td>
+            {% for i,z in zipped_data10 %}
+                <td  height='20px'>{{year}}{{i}}</td>
+            {% endfor %}
+            {% endwith %}
+        </tr>
+        <tr >
+            <td>Unit Economics (S.P.-Variable Cost)</td>
+            {% for i,z in zipped_data11 %}
+                <td  height='20px' style='background:rgb(255, 255, 255)'>{{i}}{{z}}</td>
+            {% endfor %}
+        </tr>
+        <tr >
+            <td>Sales Revenues at the Unit Level</td>
+            {% for i,z in zipped_data12 %}
+                <td  height='20px' style='background:rgb(255, 255, 255)'>{{i}}{{z}}</td>
+            {% endfor %}
+        </tr>
+        <tr >
+            <td>Variable Costs</td>
+            {% for i,z in zipped_data13 %}
+                <td  height='20px' style='background:rgb(255, 255, 255)'>{{i}}{{z}}</td>
+            {% endfor %}
+        </tr>
+        <tr >
+            <td>Fixed Unit Costs</td>
+            {% for i,z in zipped_data14 %}
+                <td  height='20px' style='background:rgb(255, 255, 255)'>{{i}}{{z}}</td>
+            {% endfor %}
+        </tr>
+        <tr >
+            <td>Unit Contribution (Revenue-Variable Cost)</td>
+            {% for i,z in zipped_data15 %}
+                <td  height='20px' style='background:rgb(255, 255, 255)'>{{i}}{{z}}</td>
+            {% endfor %}
+        </tr>
+        <tr >
+            <td>Fixed Corporate Costs (Income Tax)</td>
+            {% for i,z in zipped_data16 %}
+                <td  height='20px' style='background:rgb(255, 255, 255)'>{{i}}{{z}}</td>
+            {% endfor %}
+        </tr>
+        <tr >
+            <td>Gross Profit (PBDIT)</td>
+            {% for i,z in zipped_data17 %}
+                <td  height='20px' style='background:rgb(255, 255, 255)'>{{i}}{{z}}</td>
+            {% endfor %}
+        </tr>
+        <tr >
+            <td>Gross Profit (PBT)</td>
+            {% for i,z in zipped_data18 %}
+                <td  height='20px' style='background:rgb(255, 255, 255)'>{{i}}{{z}}</td>
+            {% endfor %}
+        </tr>
+        <tr >
+            <td>Gross Profit (PAT) </td>
+            {% for i,z in zipped_data19 %}
+                <td  height='20px' style='background:rgb(255, 255, 255)'>{{i}}{{z}}</td>
+            {% endfor %}
+        </tr>
+
+    </table>
+
+</div>
+
+    
+</body>
+</html>

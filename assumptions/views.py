@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Assumptions,Absenteeis_and_Defective,Cost_Assumptions,Salary_growth_and_Incentives,Financial,Depreciation_Schedule_For_Balance_Sheet_Straight_Line,Clearing_and_Forwarding_Exports,Working_capital_ratios_and_assumtpions,Preliminary_and_Preoperative_expenses,Number_of_Lines,Assumptions_for_Production_Calculations,Machinery_Growth_Figures,No_of_Operators_per_line_as_per_Operation_Bulletin,Number_of_machines_planned
+from .models import Assumptions,Absenteeis_and_Defective,Cost_Assumptions,Salary_growth_and_Incentives,Financial,Depreciation_Schedule_For_Balance_Sheet_Straight_Line,Clearing_and_Forwarding_Exports,Working_capital_ratios_and_assumtpions,Preliminary_and_Preoperative_expenses,Number_of_Lines,Assumptions_for_Production_Calculations,Machinery_Growth_Figures,No_of_Operators_per_line_as_per_Operation_Bulletin,Number_of_machines_planned,Productivity_Build_Up_for_New_Capactites_Year1,Productivity_Build_Up_for_New_Capactites_Year2,Productivity_Build_Up_for_New_Capactites_Year3
 
 
 
@@ -237,5 +237,69 @@ def create_assumption(request):
                                k=k,l=l,m=m,n=n,o=o)
         ch.save()
         return render(request,'aform.html')
+
+    if request.method == 'POST' and 'btnformx1' in request.POST:
+        a=request.POST.get('a1')
+        b = request.POST.get('b1')
+        c = request.POST.get('c1')
+        d = request.POST.get('d1')
+        e = request.POST.get('e1')
+        f = request.POST.get('f1')
+        g =request.POST.get('g1')
+        h=request.POST.get('h1')
+        i=request.POST.get('i1')
+        j=request.POST.get('j1')
+        k = request.POST.get('k1')
+        l = request.POST.get('l1')
+        m = request.POST.get('m1')
+        n = request.POST.get('n1')
+        o = request.POST.get('o1')
+        ch=Productivity_Build_Up_for_New_Capactites_Year1(a=a,b=b,c=c,d=d,e=e,f=f,g=g,h=h,i=i,j=j,
+                               k=k,l=l,m=m,n=n,o=o)
+        ch.save()
+        return render(request,'aform.html')
+
+    if request.method == 'POST' and 'btnformx2' in request.POST:
+        a=request.POST.get('a2')
+        b = request.POST.get('b2')
+        c = request.POST.get('c2')
+        d = request.POST.get('d2')
+        e = request.POST.get('e2')
+        f = request.POST.get('f2')
+        g =request.POST.get('g2')
+        h=request.POST.get('h2')
+        i=request.POST.get('i2')
+        j=request.POST.get('j2')
+        k = request.POST.get('k2')
+        l = request.POST.get('l2')
+        m = request.POST.get('m2')
+        n = request.POST.get('n2')
+        o = request.POST.get('o2')
+        ch=Productivity_Build_Up_for_New_Capactites_Year2(a=a,b=b,c=c,d=d,e=e,f=f,g=g,h=h,i=i,j=j,
+                               k=k,l=l,m=m,n=n,o=o)
+        ch.save()
+        return render(request,'aform.html')
+
+    if request.method == 'POST' and 'btnformx3' in request.POST:
+        a=request.POST.get('a3')
+        b = request.POST.get('b3')
+        c = request.POST.get('c3')
+        d = request.POST.get('d3')
+        e = request.POST.get('e3')
+        f = request.POST.get('f3')
+        g =request.POST.get('g3')
+        h=request.POST.get('h3')
+        i=request.POST.get('i3')
+        j=request.POST.get('j3')
+        k = request.POST.get('k3')
+        l = request.POST.get('l3')
+        m = request.POST.get('m3')
+        n = request.POST.get('n3')
+        o = request.POST.get('o3')
+        ch=Productivity_Build_Up_for_New_Capactites_Year3(a=a,b=b,c=c,d=d,e=e,f=f,g=g,h=h,i=i,j=j,
+                               k=k,l=l,m=m,n=n,o=o)
+        ch.save()
+        return render(request,'aform.html')
+
     else:
         return render(request,'aform.html')

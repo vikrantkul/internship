@@ -5,6 +5,8 @@ from .models import Assumptions,Absenteeis_and_Defective,Cost_Assumptions,Salary
 
 
 def create_assumption(request):
+    print('im activated')
+
     if request.method=='POST' and 'btnform1' in request.POST:
         No_of_years=request.POST.get('No_of_years')
         No_of_working_hrs_per_day=request.POST.get('No_of_working_hrs_per_day')
@@ -238,7 +240,8 @@ def create_assumption(request):
         ch.save()
         return render(request,'aform.html')
 
-    if request.method == 'POST' and 'btnformx1' in request.POST:
+    if request.method == 'POST' and 'formx1' in request.POST:
+        print('im activated')
         a=request.POST.get('a1')
         b = request.POST.get('b1')
         c = request.POST.get('c1')
@@ -257,9 +260,8 @@ def create_assumption(request):
         ch=Productivity_Build_Up_for_New_Capactites_Year1(a=a,b=b,c=c,d=d,e=e,f=f,g=g,h=h,i=i,j=j,
                                k=k,l=l,m=m,n=n,o=o)
         ch.save()
-        return render(request,'aform.html')
 
-    if request.method == 'POST' and 'btnformx2' in request.POST:
+    if request.method == 'POST' and 'formx2' in request.POST:
         a=request.POST.get('a2')
         b = request.POST.get('b2')
         c = request.POST.get('c2')
@@ -278,9 +280,8 @@ def create_assumption(request):
         ch=Productivity_Build_Up_for_New_Capactites_Year2(a=a,b=b,c=c,d=d,e=e,f=f,g=g,h=h,i=i,j=j,
                                k=k,l=l,m=m,n=n,o=o)
         ch.save()
-        return render(request,'aform.html')
 
-    if request.method == 'POST' and 'btnformx3' in request.POST:
+    if request.method == 'POST' and 'formx3' in request.POST:
         a=request.POST.get('a3')
         b = request.POST.get('b3')
         c = request.POST.get('c3')

@@ -389,9 +389,11 @@ table, th, td {
     <input type="submit" value="Submit" name="btnform14">
 </form>
 <h2>Productivity Build-Up for New Capactites</h2>
-        <form method="post"> {% csrf_token %}
     {% for i in list1 %}
+                <form method="post" id="formx{{i}}"> {% csrf_token %}
+
 <table>
+
     <tr>
         <th>Year{{i}}</th>
         <th>Quarter1</th>
@@ -427,10 +429,10 @@ table, th, td {
         <td><input type="text"  name="o{{i}}" id="" ></td>
     </tr>
 </table>
-            <input type="submit" value="Submit" name="btnformx{{i}}">
     {% endfor %}
-        </form>
+                    <input type="submit" value="Submit"  onclick="submitForms()">
 
+        </form>
 
     </div>
     <div id="sidebar">
@@ -475,5 +477,11 @@ table, th, td {
       document.getElementById('m4').value=d;
       document.getElementById('m5').value=e;
   }
+   function submitForms(){
+    document.getElementById("formx1").submit();
+    document.getElementById("formx2").submit();
+    document.getElementById("formx3").submit();
+
+}
 </script>
 </html>

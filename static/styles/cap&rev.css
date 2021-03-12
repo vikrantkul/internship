@@ -17,35 +17,37 @@ body{
 
 }
 
+#date_submit{
+                float:left; 
+                width:50%; 
+                height:fit-content;
+                padding-left:15%;
+
+}
+
 
 #cap-n-rev-assu { 
                 float:left; 
-                width:40%; 
+                width:50%; 
                 height:280px;
-                padding-left:30px;
+                padding-left:15%;
 				
             } 
 
-#Qua-Bre-Ass{ 
-                float:right; 
-                width:40%; 
-                height:280px;
-                padding-left:30px;
-
-}
 
 #total_assumptions_table { 
     display: inline-block;
     width:50%; 
     height:280px; 
-    padding-left:30px;
+    padding-left:15%;
 } 
+
 
 #total_costing_table { 
     display: inline-block;
     width:50%; 
     height:280px;
-    padding-left:30px;
+    padding-left:15%;
 } 
 
 

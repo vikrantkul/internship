@@ -10,7 +10,7 @@ class Assumptions(models.Model):
     No_of_working_days_per_month=models.IntegerField('No. of working days per month',null=True)
     Total_no_of_production_days_per_year=models.IntegerField('Total no of production days per year',null=True)
     No_of_shifts_per_day=models.IntegerField('No. of shifts per day',null=True)
-    Exchange_rate=models.IntegerField(default=0,null=True)
+    Exchange_rate=models.IntegerField(default=0,null=True) 
     def __str__(self):
         return str(self.id)
 

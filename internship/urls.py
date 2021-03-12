@@ -21,5 +21,5 @@ from capacityrevenue import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('assumption',include('assumptions.urls')),
-    path('c&r',include('capacityrevenue.urls')),
+    path('capacity/',include('capacityrevenue.urls')),
 ] 

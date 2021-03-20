@@ -240,3 +240,18 @@ class Productivity_Build_Up_for_New_Capactites_Year3(models.Model):
     o = models.CharField('Productivity Factor(AnnualAvg)', max_length=25, null=True, blank=True)
     def __str__(self):
         return str(self.id)
+
+class Summary_year1(models.Model):
+    a = models.CharField('Utilization Build-Up(Year1)', max_length=25, null=True, blank=True)
+    b = models.CharField('Efficiency Build-Up(Year2)', max_length=25, null=True, blank=True)
+    c = models.CharField('Productivity Factor(Year2)', max_length=25, null=True, blank=True)
+
+class Summary_year2(models.Model):
+    a = models.CharField('Utilization Build-Up(Year2)', max_length=25, null=True, blank=True)
+    b = models.CharField('Efficiency Build-Up(Year2)', max_length=25, null=True, blank=True)
+    c = models.CharField('Productivity Factor(Year2)', max_length=25, null=True, blank=True)
+
+class Summary_year3(models.Model):
+    a = models.CharField('Utilization Build-Up(Year3)', max_length=25, null=True, blank=True)
+    b = models.CharField('Efficiency Build-Up(Year3)', max_length=25, null=True, blank=True)
+    c = models.CharField('Productivity Factor(Year3)', max_length=25, null=True, blank=True)
